@@ -19,6 +19,12 @@ const UserSchema: Schema = new Schema({
     type: String,
     required: true,
   },
+
+  role: {
+        type: String,
+        enum: ['admin', 'master'],
+        default: 'admin' 
+    }
 });
 
 export const UserModel = mongoose.model<IUserDocument>(

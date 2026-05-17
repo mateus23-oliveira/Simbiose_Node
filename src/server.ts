@@ -3,7 +3,6 @@ import userRoutes from "./routes/user.routes";
 import { Database } from "./config/database";
 
 import cors from 'cors';
-import authRoutes from "./routes/auth.routes";
 
 import authRoutes from "./routes/auth.routes";  
 import path from "path";
