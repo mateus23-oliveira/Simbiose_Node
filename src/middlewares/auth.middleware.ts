@@ -1,5 +1,9 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 
 export function authMiddleware(
   req: Request,
@@ -25,7 +29,10 @@ export function authMiddleware(
 
   try {
 
-    jwt.verify(token, "SEGREDO_JWT");
+     jwt.verify(
+      token,
+      process.env.JWT_SECRET as string
+    );
 
     next();
 
