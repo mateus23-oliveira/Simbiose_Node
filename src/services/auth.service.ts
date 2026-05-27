@@ -1,6 +1,9 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 import { UserModel } from "../models/auth.model";
+
+dotenv.config();
 
 export class AuthService {
 
@@ -47,7 +50,7 @@ export class AuthService {
         id: usuario._id,
         email: usuario.email,
       },
-      "SEGREDO_JWT",
+      process.env.JWT_SECRET as string,
       {
         expiresIn: "1d",
       }

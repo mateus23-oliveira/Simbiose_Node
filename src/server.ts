@@ -6,6 +6,11 @@ import cors from 'cors';
 import authRoutes from "./routes/auth.routes";
 
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
+const PORT = process.env.PORT || 3000;
+
 
 
 const app = express();
@@ -28,6 +33,6 @@ app.use("/especies", userRoutes);
 
 app.use("/auth", authRoutes);
 
-app.listen(3000, () => {
-  console.log("Servidor rodando na porta 3000");
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
