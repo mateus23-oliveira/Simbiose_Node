@@ -1,5 +1,5 @@
-import { IEspecie } from "../interfaces/user.interface";
-import { EspecieModel } from "../models/user.model";
+import { IEspecie } from "../interfaces/especie.interface";
+import { EspecieModel } from "../models/especie.model";
 
 export class EspecieService {
   

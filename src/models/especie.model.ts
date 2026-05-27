@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document } from "mongoose";
-import { IEspecie } from "../interfaces/user.interface";
+import { IEspecie } from "../interfaces/especie.interface";
 
 export interface IEspecieDocument extends IEspecie, Document {}
 
