@@ -1,6 +1,7 @@
 import express from "express";
 import userRoutes from "./routes/especie.routes";
 import { Database } from "./config/database";
+import authRoutes from './routes/auth.routes';
 
 import cors from 'cors';
 
