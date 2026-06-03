@@ -2,6 +2,8 @@ import express from "express";
 import userRoutes from "./routes/especie.routes";
 import { Database } from "./config/database";
 import authRoutes from './routes/auth.routes';
+import swaggerUi from "swagger-ui-express";
+import { swaggerSpec } from "./config/swagger";
 
 import cors from 'cors';
 
@@ -19,6 +21,12 @@ app.use(cors());
 app.use(express.json());
 
 Database.connect();
+
+app.use(
+  "/docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec)
+);
 
 
 app.use("/users", userRoutes);
